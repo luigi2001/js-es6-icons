@@ -96,7 +96,7 @@ const icons = [
       type: 'user',
       family: 'fas',
     },
-  ];
+];
 
 const colorIcons = icons.map((element) =>{
     let color = 'purple';
@@ -110,6 +110,19 @@ const colorIcons = icons.map((element) =>{
         ...element,
         color
     }
+});
+
+
+const filtro = [];
+
+colorIcons.forEach((element) =>{
+  if(!filtro.includes(element.type)){
+    filtro.push(element.type);
+    document.getElementById('filtro').innerHTML += 
+    `
+    <option value="${element.type}">${element.type}</option>
+    `
+  }
 });
 
 
