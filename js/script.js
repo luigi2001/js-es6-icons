@@ -98,10 +98,34 @@ const icons = [
     },
   ];
 
+const colorIcons = icons.map((element) =>{
+    let color = 'purple';
+    if(element.type == 'animal'){
+      color = 'blue';
+    }else if(element.type == 'vegetable'){
+      color = 'orange';
+    }
 
-icons.forEach((element) =>{
+    return {
+        ...element,
+        color
+    }
+});
+
+
+colorIcons.forEach((element) =>{
     document.getElementById('icons').innerHTML +=
     `
-        <div class="box"><i class="${element.family} ${element.prefix} ${element.name}"></i></div>
+    <div>
+      <i class="${element.family} ${element.prefix}${element.name}" style="color:${element.color};"></i>
+      <div class="title">${element.name.toUpperCase()}</div>
+    </div>
     `
 });
+
+
+
+
+
+
+
