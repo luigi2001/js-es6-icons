@@ -34,7 +34,7 @@ label{
     overflow-y: scroll;
 }
 
-.row{
+#row{
     width: 100%;
     display: flex;
 }
